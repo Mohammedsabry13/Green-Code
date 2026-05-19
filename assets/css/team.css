@@ -1,0 +1,405 @@
+/* ================================
+   ROOT VARIABLES
+   ================================ */
+:root {
+    /* Colors */
+    --primary-green: #97c93d;
+    --primary-green-dark: #7cb342;
+    --primary-green-light: #8bc34a;
+    --primary-green-gradient: linear-gradient(135deg, #8bc34a, #4caf50);
+    --secondary-green: #97c93d;
+    --secondary-green-dark: #95c05a;
+    --background-light: #f8f9fa;
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-gray: #666;
+    --text-light-gray: #999;
+    --border-light: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+
+    /* Typography */
+    --font-primary: "Somar", sans-serif;
+    --font-size-xs: 0.8rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.1rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3rem;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 5rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 25px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 20px var(--shadow-light);
+    --shadow-md: 0 8px 25px var(--shadow-light);
+    --shadow-lg: 0 10px 30px var(--shadow-medium);
+
+    /* Layout */
+    --container-max-width: 1200px;
+}
+
+/* ================================
+   RESET & BASE STYLES
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Somar";
+    src: url("../fonts/somar.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* ================================
+   NAVIGATION
+   ================================ */
+.navbar {
+    padding: var(--spacing-md) 0;
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: auto;
+}
+
+.nav-link.active {
+    color: var(--primary-green) !important;
+    text-decoration: underline !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-gray) !important;
+    margin: 0 var(--spacing-md);
+    font-weight: 500;
+    transition: color var(--transition-normal);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-green) !important;
+    text-decoration: underline;
+}
+
+.nav-contat {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ar-btn {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.ar-btn:hover {
+    background: var(--primary-green-dark);
+    transform: translateY(-2px);
+}
+
+.nav-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================================
+   TEAM HEADER SECTION
+   ================================ */
+.team-header {
+    background-color: var(--primary-green-light);
+    text-align: center;
+}
+
+.team-header-title {
+    color: var(--white);
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ================================
+   TEAM MEMBERS SECTION
+   ================================ */
+.team-section {
+    background-color: var(--background-light);
+    padding: var(--spacing-4xl) 0;
+}
+
+.team-main-heading {
+    color: var(--text-dark);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.team-description {
+    color: var(--text-gray);
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    text-align: center;
+    margin: 0 auto var(--spacing-3xl) auto;
+}
+
+/* Team Member Card */
+.team-member-card {
+    position: relative;
+    margin-bottom: var(--spacing-3xl);
+    text-align: center;
+}
+
+.team-member-avatar-wrapper {
+    position: relative;
+    width: 185px;
+    height: 120px;
+    margin: 0 auto var(--spacing-3xl) auto;
+}
+
+.avatar-background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: -15px;
+    right: 1px;
+    z-index: 1;
+}
+
+.avatar-image-frame {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 2;
+    box-shadow: var(--shadow-md);
+}
+
+.avatar-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-name {
+    color: var(--text-dark);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.team-member-role {
+    color: var(--text-light-gray);
+    font-size: var(--font-size-sm);
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+.footer-main {
+    background: linear-gradient(135deg,
+            #a4d65e 0%,
+            var(--primary-green-light) 100%);
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl) 0;
+    color: var(--white);
+}
+
+.footer-bottom {
+    background-color: #4a5d23;
+    padding: var(--spacing-md) 0;
+}
+
+.logo-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.logo-section img {
+    width: 40%;
+    max-width: 200px;
+    height: auto;
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--spacing-xl);
+}
+
+.social-icon {
+    transition: transform var(--transition-normal);
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.footer-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-section h5 {
+    color: var(--white);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-section ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-normal);
+    display: inline-block;
+}
+
+.footer-section ul li a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateX(5px);
+}
+
+.copyright-text {
+    color: var(--white);
+    font-size: var(--font-size-xs);
+    text-align: center;
+    margin: 0;
+}
+
+/* ================================
+   MEDIA QUERIES
+   ================================ */
+
+/* Small devices (≥576px) */
+@media (min-width: 576px) {
+    .team-main-heading {
+        font-size: var(--font-size-4xl);
+    }
+}
+
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+    .team-header-title {
+        font-size: var(--font-size-5xl);
+        padding: 10px;
+    }
+
+    .team-main-heading {
+        font-size: 2.5rem;
+    }
+
+    .team-description {
+        font-size: var(--font-size-lg);
+    }
+
+    .team-member-card {
+        margin-bottom: var(--spacing-4xl);
+    }
+
+    .footer-main {
+        padding: var(--spacing-4xl) var(--spacing-xl);
+    }
+
+    .logo-section {
+        margin-bottom: 0;
+    }
+
+    .social-icons {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) {
+    .team-section {
+        padding: var(--spacing-4xl) 0 var(--spacing-4xl) 0;
+    }
+
+    .footer-section {
+        margin-bottom: 0;
+    }
+
+    .logo-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-start !important;
+        align-items: center;
+    }
+
+}
+
+/* Extra large devices (≥1200px) */
+@media (min-width: 1200px) {
+    .team-section {
+        padding: 100px 0;
+    }
+
+
+}

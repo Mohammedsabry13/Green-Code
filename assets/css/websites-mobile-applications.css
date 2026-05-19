@@ -1,0 +1,926 @@
+/* ================================
+   ROOT VARIABLES
+   ================================ */
+:root {
+    /* Colors */
+    --primary-green: #97c93d;
+    --primary-green-dark: #7cb342;
+    --primary-green-light: #8bc34a;
+    --primary-green-gradient: linear-gradient(135deg, #8bc34a, #4caf50);
+    --secondary-green: #97c93d;
+    --secondary-green-dark: #95c05a;
+    --background-light: #f8f9fa;
+    --background-gray: #f8f8f8;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-medium: #555555;
+    --text-gray: #666;
+    --text-light-gray: #999;
+    --border-light: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+
+    /* Typography */
+    --font-primary: "Somar", sans-serif;
+    --font-size-xs: 0.8rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 0.95rem;
+    --font-size-lg: 1.1rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3rem;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 5rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 25px;
+    --radius-2xl: 50px;
+    --radius-3xl: 56px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 20px var(--shadow-light);
+    --shadow-md: 0 8px 25px var(--shadow-light);
+    --shadow-lg: 0 10px 30px var(--shadow-medium);
+    --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --grid-gap: 1rem;
+}
+
+/* ================================
+   RESET & BASE STYLES
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Somar";
+    src: url("..") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+}
+
+.arabic-text {
+    font-family: var(--font-primary);
+}
+
+/* ================================
+   NAVIGATION
+   ================================ */
+.navbar {
+    padding: var(--spacing-md) 0;
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-gray) !important;
+    margin: 0 var(--spacing-md);
+    font-weight: 500;
+    transition: color var(--transition-normal);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active,
+.nav-link.active {
+    color: var(--primary-green) !important;
+    text-decoration: underline;
+}
+
+.nav-item,
+.nav-contat {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-contat {
+    flex-direction: column;
+}
+
+.ar-btn {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.ar-btn:hover {
+    background: var(--primary-green-dark);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   HEADER SECTION
+   ================================ */
+.verdant-header-strip {
+    background-color: var(--primary-green-light);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.alabaster-title-text {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ================================
+   MAIN CONTENT - WEBSITES & MOBILE APPLICATIONS
+   ================================ */
+.primary-content-wrapper {
+    min-height: 90vh;
+}
+
+.main-service-container {
+    padding: 60px 0;
+}
+
+.text-content-section {
+    padding-right: 40px;
+}
+
+.primary-heading-text,
+.service-description-text,
+.company-info-paragraph,
+.technology-services-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+}
+
+.primary-heading-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.portfolio-reference-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+/* Visual Elements */
+.visual-elements-container {
+    position: relative;
+    height: 400px;
+}
+
+.green-circular-background {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green-light) 100%);
+    border-radius: var(--radius-full);
+    z-index: 1;
+}
+
+.mobile-device-mockup {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 280px;
+    background: linear-gradient(145deg, #2196f3 0%, #1976d2 100%);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    z-index: 3;
+}
+
+.device-screen-area {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    background: var(--white);
+    border-radius: 15px;
+}
+
+.app-icon-grid {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    right: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    z-index: 4;
+}
+
+.individual-app-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    position: relative;
+}
+
+.image-phone {
+    width: 27rem;
+    height: auto;
+    position: absolute;
+    left: -150px;
+    top: -45px;
+}
+
+/* ================================
+   WHY GREEN CODE SECTION
+   ================================ */
+.emerald-showcase-wrapper {
+    background-color: var(--background-gray);
+    min-height: 100vh;
+    padding: 60px 0;
+}
+
+.verdant-title-heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.sage-feature-container {
+    margin-bottom: 4rem;
+}
+
+.lime-circle-element {
+    width: 120px;
+    height: 120px;
+    border: 12px solid var(--primary-green-light);
+    border-radius: var(--radius-full);
+    background-color: var(--white);
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forest-service-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.jade-description-text {
+    font-size: var(--font-size-md);
+    color: var(--text-medium);
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 15px;
+}
+
+/* ================================
+   TECHNOLOGIES WE PROVIDE
+   ================================ */
+.primary-tech-showcase {
+    padding: 60px 0;
+    min-height: 50vh;
+}
+
+.main-tech-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.primary-heading-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.decorative-icon-placeholder {
+    position: relative;
+}
+
+.decorative-icon-placeholder img {
+    width: 30rem;
+    height: auto;
+    position: absolute;
+    top: -40px;
+    left: -265px;
+}
+
+.main-tech-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.technology-icons-grid {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.tech-icon-placeholder,
+.angular-tech-icon,
+.dotnet-tech-icon,
+.swift-tech-icon,
+.php-tech-icon,
+.mysql-tech-icon,
+.laravel-tech-icon,
+.firebase-tech-icon {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    position: relative;
+}
+
+.angular-tech-icon img,
+.dotnet-tech-icon img,
+.swift-tech-icon img,
+.php-tech-icon img,
+.mysql-tech-icon img,
+.laravel-tech-icon img,
+.firebase-tech-icon img {
+    width: 100%;
+    height: auto;
+}
+
+/* ================================
+   CARDS & UI COMPONENTS
+   ================================ */
+.card,
+.card-top,
+.card-bottom {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-bottom {
+    padding: 25px;
+    height: 13rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.hosting-card {
+    width: 315px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.hosting-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.price-button {
+    position: absolute;
+    right: 35px;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--white);
+    width: 80%;
+    margin-top: 9px;
+}
+
+/* ================================
+   SLIDER & FRAME
+   ================================ */
+.frame {
+    position: relative;
+    height: 33rem;
+    right: -145px;
+    background: linear-gradient(100deg, var(--primary-green), #dafe99);
+    border-radius: var(--radius-2xl);
+    z-index: -90;
+}
+
+.uiux-slider__viewport {
+    position: absolute;
+    left: -135px;
+    top: 20px;
+    width: clamp(304px, 74%, 720px);
+    height: 30rem;
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+    z-index: 99;
+}
+
+/* ================================
+   FOOTER SECTION
+   ================================ */
+.footer-main {
+    background: linear-gradient(135deg, #a4d65e 0%, var(--primary-green-light) 100%);
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    position: relative;
+}
+
+.footer-bottom {
+    background-color: #4a5d23;
+    padding: var(--spacing-md) 0;
+}
+
+.logo-section>img {
+    width: 40%;
+    height: auto;
+}
+
+.logo-text {
+    color: var(--white);
+    font-size: var(--font-size-3xl);
+    font-weight: 300;
+    margin: 0;
+    line-height: 1;
+}
+
+.logo-subtitle {
+    color: var(--white);
+    font-size: var(--font-size-xs);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-top: var(--spacing-xs);
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: var(--spacing-xl);
+}
+
+.social-icon>img {
+    width: 75%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+}
+
+.footer-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-section h5 {
+    color: var(--white);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-section ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: 300;
+    transition: color var(--transition-normal);
+}
+
+.footer-section ul li a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.copyright-text {
+    color: var(--white);
+    font-size: var(--font-size-xs);
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+}
+
+/* ================================
+   TESTIMONIALS SECTION
+   ================================ */
+.testimonials-section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.section-title {
+    font-size: var(--font-size-4xl);
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+}
+
+/* ================================
+   CONTACT SECTION
+   ================================ */
+.content-wrapper {
+    padding: 100px 0;
+}
+
+.left-section {
+    padding-right: var(--spacing-2xl);
+}
+
+.main-title {
+    font-size: var(--font-size-4xl);
+}
+
+.decorative-lines {
+    width: 300px;
+    height: 400px;
+}
+
+.form-container {
+    padding: var(--spacing-xl);
+}
+
+.ball-contact {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    top: -120px;
+    right: -115px;
+}
+
+.tacno-Web {
+    width: 45rem;
+    margin-left: 14rem;
+}
+
+/* ================================
+   RESPONSIVE DESIGN - TABLETS
+   ================================ */
+@media (min-width: 576px) {
+    .verdant-title-heading {
+        font-size: 2.8rem;
+    }
+
+    .lime-circle-element {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Main Service Container */
+    .text-content-section {
+        padding-right: 60px;
+    }
+
+    .primary-heading-text {
+        font-size: 19px;
+    }
+
+    .secondary-service-title {
+        font-size: 21px;
+    }
+
+    /* Why Green Code */
+    .emerald-showcase-wrapper {
+        padding: 80px 0;
+    }
+
+    .sage-feature-container {
+        margin-bottom: 3rem;
+    }
+
+    .jade-description-text {
+        padding: 0 10px;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+        padding: var(--spacing-4xl) 0;
+    }
+
+    .section-title {
+        font-size: var(--font-size-5xl);
+    }
+
+    .testimonial-card {
+        flex: 0 0 50%;
+        min-width: 50%;
+    }
+
+    /* Contact */
+    .content-wrapper {
+        padding: 150px 0;
+    }
+
+    .left-section {
+        padding-right: var(--spacing-4xl);
+    }
+
+    .main-title {
+        font-size: var(--font-size-5xl);
+    }
+
+    /* Footer */
+    .footer-main {
+        padding: 50px;
+    }
+
+    .logo-section {
+        margin-bottom: 0;
+    }
+
+    .social-icons {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+/* ================================
+   RESPONSIVE DESIGN - DESKTOP
+   ================================ */
+@media (min-width: 992px) {
+
+    /* Main Service Container */
+    .main-service-container {
+        padding: 80px 0;
+    }
+
+    .text-content-section {
+        padding-right: 80px;
+    }
+
+    .primary-heading-text {
+        font-size: 20px;
+    }
+
+    .secondary-service-title {
+        font-size: 22px;
+    }
+
+    .visual-elements-container {
+        height: 450px;
+    }
+
+    .green-circular-background {
+        width: 360px;
+        height: 360px;
+    }
+
+    .mobile-device-mockup {
+        width: 220px;
+        height: 300px;
+        right: 90px;
+    }
+
+    /* Why Green Code */
+    .verdant-title-heading {
+        font-size: 3rem;
+        margin-bottom: 5rem;
+    }
+
+    .lime-circle-element {
+        width: 140px;
+        height: 140px;
+        border-width: 14px;
+    }
+
+    .forest-service-title {
+        font-size: 1.3rem;
+    }
+
+    .jade-description-text {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+        padding: var(--spacing-4xl) 0;
+    }
+
+    .card {
+        padding: var(--spacing-2xl);
+    }
+
+    /* Contact */
+    .decorative-lines {
+        width: 400px;
+        height: 500px;
+    }
+
+    .form-container {
+        padding: var(--spacing-2xl);
+    }
+
+    /* Footer */
+    .footer-main {
+        padding: 50px;
+    }
+
+    .footer-section {
+        margin-bottom: 0;
+    }
+
+    /* UI Components */
+    .frame {
+        position: relative;
+        height: 33rem;
+        right: -145px;
+        background: linear-gradient(100deg, var(--primary-green), #dafe99);
+        border-radius: var(--radius-2xl);
+        z-index: -90;
+    }
+
+    .uiux-slider__viewport {
+        z-index: 99;
+        position: absolute;
+        left: -135px;
+        top: 20px;
+        width: clamp(304px, 74%, 720px);
+        height: 30rem;
+        border-radius: var(--radius-3xl);
+        overflow: hidden;
+    }
+
+    .card-top,
+    .card-bottom {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .card-bottom {
+        padding: 25px;
+        height: 13rem;
+    }
+
+    .price-button {
+        position: absolute;
+        border: none;
+        right: 35px;
+        border-radius: 10px;
+        padding: 12px 0;
+        font-weight: 600;
+        font-size: var(--font-size-base);
+        color: var(--white);
+        width: 80%;
+        margin-top: 9px;
+    }
+
+    .hosting-card {
+        width: 315px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hosting-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .tacno-Web {
+        width: 45rem;
+        margin-left: 14rem;
+    }
+
+    .ball-contact {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        top: -120px;
+        height: auto;
+        right: -115px;
+    }
+}
+
+/* ================================
+   RESPONSIVE DESIGN - LARGE DESKTOP
+   ================================ */
+@media (min-width: 1200px) {
+
+    /* Main Service Container */
+    .main-service-container {
+        padding: 100px 200px;
+    }
+
+    .visual-elements-container {
+        height: 500px;
+    }
+
+    .green-circular-background {
+        width: 388px;
+        height: 380px;
+    }
+
+    .mobile-device-mockup {
+        width: 240px;
+        height: 320px;
+        right: 100px;
+    }
+
+    /* Why Green Code */
+    .jade-description-text {
+        padding: 0;
+    }
+
+    /* Contact */
+    .left-section {
+        padding-right: var(--spacing-4xl);
+    }
+
+    .decorative-lines {
+        width: 450px;
+        height: 600px;
+    }
+
+    /* Footer */
+    .container {
+        max-width: 1140px;
+    }
+}
