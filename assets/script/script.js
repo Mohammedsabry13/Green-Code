@@ -1,3 +1,11 @@
+/**
+ * ALFA HUBS - CUSTOM JAVASCRIPT
+ * @author Mohammed Sabry (Mohammedsabry13)
+ * @github https://github.com/Mohammedsabry13
+ * @copyright 2026 Mohammed Sabry. All rights reserved.
+ * Pure JavaScript with Bootstrap 5
+ */
+
 (function () {
   const sliders = document.querySelectorAll(".uiux-slider");
 
@@ -278,10 +286,10 @@ document.addEventListener("DOMContentLoaded", function () {
       this.track.addEventListener(
         "touchstart",
         (e) => start(e.touches[0].clientX),
-        { passive: true }
+        { passive: true },
       );
       this.track.addEventListener("touchend", (e) =>
-        end((e.changedTouches[0] || {}).clientX || 0)
+        end((e.changedTouches[0] || {}).clientX || 0),
       );
       this.track.addEventListener("pointerdown", (e) => start(e.clientX));
       window.addEventListener("pointerup", (e) => end(e.clientX));
@@ -350,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (this.indicators && this.indicators.length) {
         this.indicators.forEach((el, i) =>
-          el.classList.toggle("active", i === this.currentSlide)
+          el.classList.toggle("active", i === this.currentSlide),
         );
       }
     }
@@ -360,3 +368,10 @@ document.addEventListener("DOMContentLoaded", function () {
     new TestimonialSlider();
   });
 })();
+/**
+ * ALFA HUBS - CUSTOM JAVASCRIPT
+ * @author Mohammed Sabry (Mohammedsabry13)
+ * @github https://github.com/Mohammedsabry13
+ * @copyright 2026 Mohammed Sabry. All rights reserved.
+ * Pure JavaScript with Bootstrap 5
+ */

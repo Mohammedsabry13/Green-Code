@@ -22,6 +22,11 @@ A feature-rich multi-page corporate website for **Green Code Technology**, a Sau
 
 ## ✨ Features
 
+---
+⚠️ This website was originally created by Green Code Technology
+If you use this, credit is required: (replace with your GitHub link)
+
+
 - **Custom UI/UX image slider** — dot-navigated auto-advancing figure slider in a phone/frame mockup on the hero
 - **Spinning logo** — CSS-animated rotating logo disc inside concentric rings (Vision/Mission center piece)
 - **Vision & Mission section** — 3-column layout with Vision text (left), spinning logo (center), Mission text (right)
